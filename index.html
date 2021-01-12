@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Clock'n'notes</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+  
+    <div class="container">
+      <div class="clock" id="clock">
+        
+      </div>
+      
+      <div class="notes" id="notes">
+        
+      </div>
+
+      <div id="addNewNoteBtn" class="addNewNoteBtn" title="Add note">+</div>   
+
+    </div>
+
+    <div id="noteDialogOverlay" class="noteDialogOverlay">
+      <div id="noteDialog" class="noteDialog">
+        <textarea id="noteTextArea" placeholder="Add new note here..."></textarea>
+        <div id="noteDialog_CloseBtn" class="dialogButtons">×</div>
+        <div id="noteDialog_SaveBtn" class="dialogButtons">SAVE</div>
+        <div id="noteDialog_DeleteBtn" class="dialogButtons">DELETE</div>
+      </div>
+    </div>
+  
+  </body>
+</html>

@@ -1,0 +1,177 @@
+body {
+  background-color: #20262e;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 20px);
+  
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+  grid-template-areas: "clock notes";
+    
+  
+  
+  color: #6ce890;
+
+}
+
+#clock {
+  grid-area: clock;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 5em;
+  text-align: center;
+
+  text-shadow: 0 0 12px #5ee084;
+}
+
+#notes {
+  grid-area: notes;
+  height: 90vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.note {
+  padding: 0.75em;
+  margin: 0.7em;
+  border: 1px solid #637167;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+  word-wrap: break-word; /* IE5.5-7 */
+  -moz-white-space: pre-wrap; /* Firefox1.0-2.0 */
+  white-space: pre-wrap; /* current browsers */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.note:hover {
+  -webkit-box-shadow: 0px 0px 6px #5ee084, 0px 0px 10px #5EE084;
+  -moz-box-shadow: 0px 0px 6px #5ee084, 0px 0px 10px #5EE084;
+  box-shadow: 0px 0px 6px #5ee084, 0px 0px 10px #5EE084;
+}
+
+
+/* add new note button (plus sign) */
+
+.addNewNoteBtn {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius:25px;
+  line-height:48px;
+  text-align:center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.addNewNoteBtn:hover {
+  text-shadow: 1px 1px 2px #5ee084, 0 0 0.6em #5ee084, 0 0 0.1em #5ee084;
+}
+
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #9ca9bb; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5f6874; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #474e57; 
+}
+
+
+/* Note Overlay (new note, edit note) */
+
+.noteDialogOverlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+  background: #20262e;
+}
+
+.noteDialog {
+  top: 5%;
+  margin: 0 1em;
+  padding-top: 2em;
+  padding-left: 1em;
+  position: relative;
+  border: 2px solid #5ee084;
+  -webkit-border-radius:  0.5em;
+  -moz-border-radius:     0.5em;
+  border-radius:          0.5em;
+  width: 50%; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+#noteTextArea {
+  width: 90%;
+  margin: 1.2em 0.1em 3.2em 0.1em;
+  padding: 0.2em;
+  height: 10em;
+  border: none;
+  font: 1em Arial, Helvetica, sans-serif;
+  resize: none;
+  background: #20262e;
+  color: #eafbef;
+}
+
+textarea {
+  outline: none;
+}
+
+.dialogButtons {
+  position: absolute;
+  font-weight: bold;
+  color: #5ee084;
+  cursor: pointer;
+}
+
+.dialogButtons:hover {
+  text-shadow: 1px 1px 2px #5ee084, 0 0 1em #5ee084, 0 0 0.2em #5ee084;
+}
+
+#noteDialog_CloseBtn{
+  right: 0.5em;
+  top: 0.1em;
+  font-size: 2em;
+}
+
+#noteDialog_SaveBtn {
+  left: 20px;
+  bottom: 20px;
+}
+
+#noteDialog_DeleteBtn {
+  right: 20px;
+  bottom: 20px;
+}
