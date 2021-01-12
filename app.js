@@ -21,6 +21,16 @@ setInterval(timeAndDate, 1000);
 
 // Notes
 
+let notes = [];
+
+if(!localStorage.notes) {
+  localStorage.setItem('notes', []);
+} else {
+  notes = JSON.parse(localStorage.notes);
+}
+
+
+
 const noteDialogOverlay = document.getElementById('noteDialogOverlay');
 const noteTextArea = document.getElementById('noteTextArea');
 
@@ -92,10 +102,6 @@ document.getElementById('noteDialog_DeleteBtn').addEventListener('click', functi
 
 });
 
-
-let notes = JSON.parse(localStorage.notes);
-
-
 // creates notes in #notes div and sets click event listeners
 function print() {
   
@@ -124,4 +130,5 @@ function rePrint() {
   localStorage.setItem('notes', JSON.stringify(notes));
 }
 
-print();
+if(notes)
+  print();
